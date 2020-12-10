@@ -7,13 +7,13 @@
 //TODO: Movesets
 //TODO: Elements
 
-using HealthStat		= uint8_t;
-using SpeedStat			= uint8_t;
-using AttackStat		= uint8_t;
-using DefenseStat		= uint8_t;
-using SpecialAtkStat	= uint8_t;
-using SpecialDefStat	= uint8_t;
-using IndividualValue	= uint8_t;
+using HealthStat = uint8_t;
+using SpeedStat = uint8_t;
+using AttackStat = uint8_t;
+using DefenseStat = uint8_t;
+using SpecialAtkStat = uint8_t;
+using SpecialDefStat = uint8_t;
+using IndividualValue = uint8_t;
 
 struct CreatureStats final
 {
@@ -25,19 +25,19 @@ struct CreatureStats final
 		, SpecialDefStat	aSDEF) :
 		HP(aHP), SPD(aSPD), ATK(aATK), DEF(aDEF), SATK(aSATK), SDEF(aSDEF) {}
 
-	HealthStat		HP		= 0;
-	SpeedStat		SPD		= 0;
-	AttackStat		ATK		= 0;
-	DefenseStat		DEF		= 0;
-	SpecialAtkStat	SATK	= 0;
-	SpecialDefStat	SDEF	= 0;
+	HealthStat		HP = 0;
+	SpeedStat		SPD = 0;
+	AttackStat		ATK = 0;
+	DefenseStat		DEF = 0;
+	SpecialAtkStat	SATK = 0;
+	SpecialDefStat	SDEF = 0;
 };
 
 class CreatureData final
 {
 public:
-	CreatureStats	Stats	= { 0,0,0,0,0,0 };
-	std::string		Name	= "";
+	CreatureStats	Stats = { 0,0,0,0,0,0 };
+	std::string		Name = "";
 };
 
 using CreatureID = uint64_t;
