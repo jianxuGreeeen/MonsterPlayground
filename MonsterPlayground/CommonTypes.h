@@ -18,28 +18,29 @@ using IndividualValue = uint8_t;
 struct CreatureStats final
 {
 	CreatureStats(HealthStat aHP
-		, SpeedStat			aSPD
-		, AttackStat		aATK
-		, DefenseStat		aDEF
-		, SpecialAtkStat	aSATK
-		, SpecialDefStat	aSDEF) :
+		, SpeedStat aSPD
+		, AttackStat aATK
+		, DefenseStat aDEF
+		, SpecialAtkStat aSATK
+		, SpecialDefStat aSDEF) :
 		HP(aHP), SPD(aSPD), ATK(aATK), DEF(aDEF), SATK(aSATK), SDEF(aSDEF) {}
 
-	HealthStat		HP = 0;
-	SpeedStat		SPD = 0;
-	AttackStat		ATK = 0;
-	DefenseStat		DEF = 0;
-	SpecialAtkStat	SATK = 0;
-	SpecialDefStat	SDEF = 0;
+	HealthStat HP = 0;
+	SpeedStat SPD = 0;
+	AttackStat ATK = 0;
+	DefenseStat DEF = 0;
+	SpecialAtkStat SATK = 0;
+	SpecialDefStat SDEF = 0;
 };
 
 class CreatureData final
 {
 public:
-	CreatureStats	Stats = { 0,0,0,0,0,0 };
-	std::string		Name = "";
+	CreatureStats Stats = { 0,0,0,0,0,0 };
+	std::string Name = "";
 };
 
 using CreatureID = uint64_t;
+using CreatureDBPair = std::pair<CreatureID, CreatureData>;
 using CreatureDataBase = std::map<CreatureID, CreatureData>;
 

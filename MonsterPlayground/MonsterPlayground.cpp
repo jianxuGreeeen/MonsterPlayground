@@ -1,29 +1,40 @@
 // MonsterPlayground.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
+#include "CommonTypes.h"
+#include "json.hpp"
+#include "JsonLoaders.h"
+#include "JsonParser.h"
 
 #include <iostream>
 #include <iomanip>
-#include "CommonTypes.h"
-#include "json.hpp"
 
 using json = nlohmann::json;
 
+constexpr char CreatureDBFilename[] = "MonsterDB.json";
+
 int main()
 {
-    std::cout << "Hello World!\n";
-
-    CreatureData creature;
-    creature.Stats = { 100, 1, 1 ,1, 1, 1 };
-    creature.Name = "test";
+    std::cout << "Welcome!\n";
 
     CreatureDataBase CreatureDB;
-    CreatureDB.insert(std::make_pair(0u, creature));
 
-    json creatureJson;
-    creatureJson["HP"] = creature.Stats.HP;
-    creatureJson["ATK"] = creature.Stats.ATK;
+    bool successfulInit = true;
+    try
+    {
+        json creatureDbJson;
+        JsonLoaders::ReadJson(CreatureDBFilename, creatureDbJson);
+        JsonParser::BuildCreatureDB(creatureDbJson, CreatureDB);
+    }
+    catch (std::exception& e)
+    {
+        std::cout << "Exception! " << e.what() << "\n";
+        successfulInit = false;
+    }
 
-    std::cout << std::setw(4) << creatureJson << std::endl;
+    if (successfulInit)
+    {
+        std::cout << "Success!\n";
+    }
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

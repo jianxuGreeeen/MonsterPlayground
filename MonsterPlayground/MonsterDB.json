@@ -1,0 +1,28 @@
+{
+	"db": [
+		{
+			"id": 4,
+			"name": "Charmander",
+			"baseStats": {
+				"hp": 39,
+				"atk": 52,
+				"def": 43,
+				"satk": 60,
+				"sdef": 50,
+				"spd": 65
+			}
+		},
+		{
+			"id": 5,
+			"name": "Charmeleon",
+			"baseStats": {
+				"hp": 58,
+				"atk": 64,
+				"def": 58,
+				"satk": 80,
+				"sdef": 65,
+				"spd": 80
+			}
+		}
+	]
+}

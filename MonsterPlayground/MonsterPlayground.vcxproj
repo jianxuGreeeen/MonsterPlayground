@@ -139,11 +139,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="JsonLoaders.cpp" />
+    <ClCompile Include="JsonParser.cpp" />
     <ClCompile Include="MonsterPlayground.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CommonTypes.h" />
     <ClInclude Include="json.hpp" />
+    <ClInclude Include="JsonKeys.h" />
+    <ClInclude Include="JsonLoaders.h" />
+    <ClInclude Include="JsonParser.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MonsterDB.json">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
